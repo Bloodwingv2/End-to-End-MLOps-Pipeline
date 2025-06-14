@@ -31,7 +31,7 @@ except Exception as e:
 
 
 # Streamlit UI
-st.title("🩺 Multiple Disease Prediction")
+st.title("🧬 Disease Prediction ML Pipeline")
 st.sidebar.title("🔍 Select a Disease")
 
 disease_option = st.sidebar.selectbox(
