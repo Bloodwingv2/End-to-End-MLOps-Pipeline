@@ -46,4 +46,4 @@ jobs:
         run: |
           echo "Streamlit Cloud automatically picks up changes on push — no manual deploy needed."
           echo "CI trigger file updated successfully!"
-          echo "Next scheduled run in 12 hours..."
+          echo "Next scheduled run in 24 hours..."
