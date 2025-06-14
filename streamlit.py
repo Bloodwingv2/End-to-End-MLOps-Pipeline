@@ -5,6 +5,12 @@ import json
 # FastAPI backend URL
 API_BASE_URL = "https://mlops-1tdv.onrender.com"
 
+# Ping FastApi Backend to wakeup for inference
+try:
+    requests.get(API_BASE_URL, timeout=5)
+except:
+    st.warning("Backend still waking up...")
+
 # Streamlit UI
 st.title("🧬 Disease Prediction ML Pipeline")
 st.sidebar.title("🔍 Select a Disease")
