@@ -2,10 +2,6 @@ name: Deploy to Streamlit Cloud
 on:
   push:
     branches: [main]
-    paths:
-      - requirements2.txt
-      - 'Trained_Models/**'
-      - 'streamlit.py'
 
 jobs:
   deploy:
