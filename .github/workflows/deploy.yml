@@ -21,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements2.txt
 
-      - name: Deploy to Streamlit (placeholder)
+      - name: Deploy to Streamlit
         run: |
           echo "Streamlit Cloud automatically picks up changes on push — no manual deploy needed."
           streamlit run streamlit.py --server.headless true &
