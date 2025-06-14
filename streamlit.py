@@ -3,7 +3,7 @@ import requests
 import json
 
 # FastAPI backend URL
-API_BASE_URL = "http://localhost:8000"  # Change this for production
+API_BASE_URL = "https://mlops-1tdv.onrender.com"
 
 # Streamlit UI
 st.title("🧬 Disease Prediction ML Pipeline")
