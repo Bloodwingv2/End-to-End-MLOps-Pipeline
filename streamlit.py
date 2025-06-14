@@ -17,7 +17,7 @@ with open('Trained_Models/Parkinsons_Models/Best_model_parkinsons_metrics.json',
 # Load models and scalers
 try:
     model_diabetes = joblib.load('Trained_Models/Diabetes_Models/Best_model_diabetes.pkl')
-    model_heart = joblib.load('Trained_Models/Heart_Models/Best_model_heart.pkl')
+    model_heart = joblib.load('Trained_Models/Heart_Models/Best_model_Heart.pkl')
     model_parkinsons = joblib.load('Trained_Models/Parkinsons_Models/Best_model_parkinsons.pkl')
 
     scaler_diabetes = joblib.load('Trained_Models/Scalers/diabetes_scaler.pkl')
