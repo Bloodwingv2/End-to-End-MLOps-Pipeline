@@ -246,13 +246,52 @@ elif disease_option == "Parkinson's":
     fo = st.number_input("MDVP:Fo(Hz)", min_value=50.0, max_value=300.0, value=st.session_state.inputs3["fo"])
     fhi = st.number_input("MDVP:Fhi(Hz)", min_value=50.0, max_value=600.0, value=st.session_state.inputs3["fhi"])
     flo = st.number_input("MDVP:Flo(Hz)", min_value=50.0, max_value=300.0, value=st.session_state.inputs3["flo"])
-    # ... (include all other Parkinson's inputs from your original code)
+    jitter = st.number_input("MDVP:Jitter(%)", min_value=0.0, max_value=0.1, value=st.session_state.inputs3["jitter"])
+    jitter_abs = st.number_input("MDVP:Jitter(Abs)", min_value=0.0, max_value=0.1, value=st.session_state.inputs3["jitter_abs"])
+    rap = st.number_input("MDVP:RAP", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["rap"])
+    ppq = st.number_input("MDVP:PPQ", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["ppq"])
+    ddp = st.number_input("Jitter:DDP", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["ddp"])
+    shimmer = st.number_input("MDVP:Shimmer", min_value=0.0, max_value=0.5, value=st.session_state.inputs3["shimmer"])
+    shimmer_db = st.number_input("MDVP:Shimmer(dB)", min_value=0.0, max_value=0.5, value=st.session_state.inputs3["shimmer_db"])
+    apq3 = st.number_input("Shimmer:APQ3", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["apq3"])
+    apq5 = st.number_input("Shimmer:APQ5", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["apq5"])
+    apq = st.number_input("MDVP:APQ", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["apq"])
+    dda = st.number_input("Shimmer:DDA", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["dda"])
+    nhr = st.number_input("NHR", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["nhr"])
+    hnr = st.number_input("HNR", min_value=0.0, max_value=40.0, value=st.session_state.inputs3["hnr"])
+    rpde = st.number_input("RPDE", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["rpde"])
+    dfa = st.number_input("DFA", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["dfa"])
+    spread1 = st.number_input("spread1", min_value=-10.0, max_value=0.0, value=st.session_state.inputs3["spread1"])
+    spread2 = st.number_input("spread2", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["spread2"])
+    d2 = st.number_input("D2", min_value=0.0, max_value=3.0, value=st.session_state.inputs3["d2"])
+    ppe = st.number_input("PPE", min_value=0.0, max_value=1.0, value=st.session_state.inputs3["ppe"])
+    
     
     if st.button("🔮 Predict Parkinson's"):
         input_data = {
-            "fo": fo, "fhi": fhi, "flo": flo,
-            # ... (include all Parkinson's fields)
-        }
+                "fo": fo,
+                "fhi": fhi,
+                "flo": flo,
+                "jitter": jitter,
+                "jitter_abs": jitter_abs,
+                "rap": rap,
+                "ppq": ppq,
+                "ddp": ddp,
+                "shimmer": shimmer,
+                "shimmer_db": shimmer_db,
+                "apq3": apq3,
+                "apq5": apq5,
+                "apq": apq,
+                "dda": dda,
+                "nhr": nhr,
+                "hnr": hnr,
+                "rpde": rpde,
+                "dfa": dfa,
+                "spread1": spread1,
+                "spread2": spread2,
+                "d2": d2,
+                "ppe": ppe
+            }
         
         result = call_api("/predict/parkinsons", input_data)
         if result:
