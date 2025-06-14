@@ -2,9 +2,9 @@ name: Deploy to Streamlit Cloud
 
 on:
   push:
-    branches: [main]  # or "master", depending on your default branch
+    branches: [main]
     paths:
-      -  requirememts2.txt
+      - requirements2.txt
       - 'Trained_Models/**'
       - 'streamlit.py'
 
@@ -24,9 +24,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements2.txt
 
       - name: Deploy to Streamlit (placeholder)
-        run: echo "Streamlit Cloud automatically picks up changes on push — no manual deploy needed."
-            streamlit run streamlit.py --server.headless true &
-              sleep 5  # wait for startup
+        run: |
+          echo "Streamlit Cloud automatically picks up changes on push — no manual deploy needed."
+          streamlit run streamlit.py --server.headless true &
+          sleep 5
