@@ -7,22 +7,22 @@ import os
 
 # Load Json Files for accuracy and recall metrics etc
 
-with open('diabetes_metrics.json', 'r') as file:
+with open('Trained_Models/Diabetes_Models/Best_model_diabetes_metrics.json', 'r') as file:
     metrics_diabetes = json.load(file)
-with open('heart disease_metrics.json', 'r') as file:
+with open('Trained_Models/Heart_Models/Best_model_heart_metrics.json', 'r') as file:
     metrics_heart = json.load(file)
-with open("parkinson's_metrics.json", 'r') as file:
+with open('Trained_Models/Parkinsons_Models/Best_model_parkinsons_metrics.json', 'r') as file:
     metrics_parkinson = json.load(file)
 
 # Load models and scalers
 try:
-    model_diabetes = joblib.load(os.path.join("Models", "diabetes_model.pkl"))
-    model_heart = joblib.load(os.path.join("Models", "heart_model.pkl"))
-    model_parkinsons = joblib.load(os.path.join("Models", "parkinsons_model.pkl"))
+    model_diabetes = joblib.load('Trained_Models/Diabetes_Models/Best_model_diabetes.pkl')
+    model_heart = joblib.load('Trained_Models/Heart_Models/Best_model_heart.pkl')
+    model_parkinsons = joblib.load('Trained_Models/Parkinsons_Models/Best_model_parkinsons.pkl')
 
-    scaler_diabetes = joblib.load(os.path.join("Models", "diabetes_scaler.pkl"))
-    scaler_heart = joblib.load(os.path.join("Models", "heart_scaler.pkl"))
-    scaler_parkinsons = joblib.load(os.path.join("Models", "parkinsons_scaler.pkl"))
+    scaler_diabetes = joblib.load('Trained_Models/Scalers/diabetes_scaler.pkl')
+    scaler_heart = joblib.load('Trained_Models/Scalers/heart_scaler.pkl')
+    scaler_parkinsons = joblib.load('Trained_Models/Scalers/parkinsons_scaler.pkl')
 
     models_loaded = True
 except Exception as e:
