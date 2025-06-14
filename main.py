@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from main import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 import numpy as np
 import pandas as pd
