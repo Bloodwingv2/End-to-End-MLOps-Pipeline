@@ -1,0 +1,29 @@
+name: Deploy to Streamlit Cloud
+
+on:
+  push:
+    branches: [main]  # or "master", depending on your default branch
+    paths:
+      - '**.py'
+      - 'Trained_Models/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Deploy to Streamlit (placeholder)
+        run: echo "Streamlit Cloud automatically picks up changes on push — no manual deploy needed."
