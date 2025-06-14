@@ -4,8 +4,9 @@ on:
   push:
     branches: [main]  # or "master", depending on your default branch
     paths:
-      - '**.py'
+      -  requirememts2.txt
       - 'Trained_Models/**'
+      - 'streamlit.py'
 
 jobs:
   deploy:
