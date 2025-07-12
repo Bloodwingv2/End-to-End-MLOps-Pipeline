@@ -165,7 +165,3 @@ mlflow ui
 👤 [Bloodwingv2](https://github.com/Bloodwingv2)
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License.
